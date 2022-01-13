@@ -2,6 +2,7 @@ import { auth, firestore } from '../lib/firebase';
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { createUser } from '../lib/db';
+import CreatePost from '../components/CreatePost';
 
 export default function Home() {
 	const [user] = useAuthState(auth);
@@ -45,8 +46,8 @@ export default function Home() {
 				<div>
 					You are logged in!
 					<LogOutButton />
+					<CreatePost />
 					<div>FEED</div>
-					<pre>{JSON.stringify(user, null, 2)}</pre>
 				</div>
 			) : (
 				<div>
