@@ -1,6 +1,7 @@
 import { auth, firestore } from '../lib/firebase';
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { createUser } from '../lib/db';
 
 export default function Home() {
 	const [user] = useAuthState(auth);
@@ -10,6 +11,13 @@ export default function Home() {
 			await signInWithPopup(auth, provider).then((result) => {
 				const { user } = result;
 				console.log(user);
+				const userObj = {
+					uid: user.uid,
+					displayName: user.displayName,
+					photoURL: user.photoURL,
+					email: user.email,
+				};
+				createUser(userObj);
 				return user;
 			});
 		};
@@ -38,6 +46,7 @@ export default function Home() {
 					You are logged in!
 					<LogOutButton />
 					<div>FEED</div>
+					<pre>{JSON.stringify(user, null, 2)}</pre>
 				</div>
 			) : (
 				<div>
