@@ -45,7 +45,7 @@ export default function Home() {
 		<div>
 			{user ? (
 				<div>
-					You are logged in!
+					🔥 My Fire App
 					<LogOutButton />
 					<CreatePost />
 					<PostList />
