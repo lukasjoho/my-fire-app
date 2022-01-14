@@ -3,6 +3,7 @@ import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { createUser } from '../lib/db';
 import CreatePost from '../components/CreatePost';
+import PostList from '../components/PostList';
 
 export default function Home() {
 	const [user] = useAuthState(auth);
@@ -47,7 +48,7 @@ export default function Home() {
 					You are logged in!
 					<LogOutButton />
 					<CreatePost />
-					<div>FEED</div>
+					<PostList />
 				</div>
 			) : (
 				<div>
