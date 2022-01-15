@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+body {
+	font-family: 'Rubik', sans-serif;
+	background: #f2f2f2;
+	h1,
+	h2,
+	h3 {
+		font-weight: 500;
+		margin: 0;
+	}
+	h1 {
+		font-size: 40px;
+		margin-bottom: 20px;
+	}
+	h2 {
+		font-size: 32px;
+		margin-bottom: 16px;
+	}
+	h3 {
+		font-size: 24px;
+		margin-bottom: 8px;
+	}
+	p {
+		margin: 0;
+	}
+	.container {
+		width: 600px;
+		max-width: 100%;
+		margin: auto;
+		margin-top: 100px;
+		.header {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 30px;
+		}
+	}
+	.createpost {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: 1fr 1fr auto;
+		grid-template-rows: 1;
+		margin-bottom: 50px;
+	}
+	input {
+		border: 2px solid black;
+		height: 40px;
+		padding-left: 10px;
+		padding-right: 10px;
+
+		border-radius: 4px;
+		font-family: 'Rubik';
+		font-size: inherit;
+		background: white;
+		transition: 0.3s ease;
+		box-sizing: border-box;
+		vertical-align: middle;
+		min-width: 0;
+		&:focus,
+		&:hover {
+			outline: none;
+			box-shadow: 3px 3px 0px black;
+		}
+	}
+	button {
+		height: 40px;
+		border: 2px solid black;
+		vertical-align: middle;
+		border-radius: 4px;
+		padding-left: 20px;
+		padding-right: 20px;
+		font-size: inherit;
+		font-family: inherit;
+		transition: 0.3s ease;
+		cursor: pointer;
+		&.create {
+			background: #6fcf97;
+		}
+		&.login {
+			background: #2d9cdb;
+		}
+		&.logout {
+			background: #bdbdbd;
+		}
+		&.publish,
+		&.update {
+			background: #6fcf97;
+		}
+		&.delete {
+			background: #eb5757;
+		}
+		&.edit {
+			background: #f2c94c;
+		}
+		&:hover {
+			box-shadow: 3px 3px 0px black;
+			cursor: pointer;
+		}
+	}
+	ul {
+		list-style-type: none;
+		padding: 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+	}
+
+	li {
+		background: white;
+		border: 2px solid black;
+		padding: 20px;
+		border-radius: 8px;
+		max-width: 100%;
+		text-overflow: clip;
+		transition: 0.3s ease;
+		&:hover {
+			box-shadow: 3px 3px 0px black;
+		}
+		button {
+			height: 30px;
+			cursor: pointer;
+			&:hover {
+				outline: none;
+				box-shadow: 2px 2px 0px black;
+				cursor: pointer;
+			}
+		}
+		.main {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+			input {
+				&[name='title'] {
+					margin-bottom: 10px;
+					font-size: 24px;
+					font-weight: 500;
+				}
+			}
+			p {
+				margin-bottom: 10px;
+			}
+		}
+		.footer {
+			display: flex;
+			justify-content: space-between;
+			height: 40px;
+			align-items: flex-end;
+			span {
+				color: grey;
+			}
+		}
+		img {
+			width: 40px;
+			height: 40px;
+			border-radius: 100%;
+			border: 1px solid black;
+		}
+	}
+}

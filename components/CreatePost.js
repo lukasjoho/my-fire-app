@@ -26,12 +26,12 @@ const CreatePost = () => {
 	};
 	return (
 		<div>
+			<h2>Create Post</h2>
 			<form onSubmit={handleClick} className='createpost'>
 				<input value={formvalues.title} onChange={handleChange} type='text' placeholder='Title' name='title' />
 				<input value={formvalues.description} onChange={handleChange} type='text' placeholder='Description' name='description' />
 				<button className='create'>Create Post</button>
 			</form>
-			<pre>{JSON.stringify(formvalues, null, 2)}</pre>
 		</div>
 	);
 };

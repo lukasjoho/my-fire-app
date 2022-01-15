@@ -42,17 +42,19 @@ export default function Home() {
 	};
 
 	return (
-		<div>
+		<div className='container'>
 			{user ? (
-				<div>
-					🔥 My Fire App
-					<LogOutButton />
+				<>
+					<div className='header'>
+						<h1>🔥 My Fire App</h1>
+						<LogOutButton />
+					</div>
 					<CreatePost />
 					<PostList />
-				</div>
+				</>
 			) : (
 				<div>
-					Please login!
+					<h1>Please login!</h1>
 					<SignInButton />
 				</div>
 			)}
